@@ -1,0 +1,6 @@
+# Ignorar entorno virtual
+venv/
+.env/
+
+# Ignorar archivo de logs
+logs/automation.log
