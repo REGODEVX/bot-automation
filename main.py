@@ -21,7 +21,7 @@ app.add_middleware(
 @app.post("/simulate-purchase")
 def simulate_purchase(credentials: AmazonCredentials):
     try:
-        bot = AmazonAutomation(mode=credentials.mode)
+        bot = AmazonAutomation(mode=credentials.mode) # Instancia 
         success = bot.simulate_purchase(
             email=credentials.email,
             password=credentials.password,
