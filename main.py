@@ -1,5 +1,6 @@
 from  fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from amazon.amazon_bot import AmazonAutomation
 from amazon.models import AmazonCredentials
 from config import API_HOST, API_PORT
@@ -30,7 +31,10 @@ def simulate_purchase(credentials: AmazonCredentials):
         if not success:
             raise HTTPException(status_code=400, detail="Error durante la simulación de compra")
 
-        return {"message": "Simulación de compra completada exitosamente"}
+        return JSONResponse(
+            status_code=200,
+            content={"message": "Simulación de compra completada exitosamente"}
+        )
 
     except Exception as e:
         logging.error(f"Error en la API: {str(e)}")
