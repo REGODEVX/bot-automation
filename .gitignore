@@ -1,6 +1,6 @@
 # Archivos compilados de Python
 __pycache__/
-*.py[cod]
+*.pyc
 
 # Ignorar entorno virtual
 venv/
